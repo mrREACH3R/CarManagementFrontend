@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">Car Management</a> -->
+  <img src="https://th.bing.com/th/id/R.7f3c8507b9d5eea32869a0124674a63d?rik=ffNo1E8ILppazQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fcar_logo%2fcar_logo_PNG1667.png&ehk=bHVzvjpqTKRVFQHVicQgtIsdIsneSZTad4bCD5yDCNI%3d&risl=&pid=ImgRaw&r=0" alt="logo" width="50px" height="50px" margin-left="20px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cars">Get All Cars</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cars/get">Get Car By Id</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cars/top">Top car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cars/delete">Delete Car</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cars/update">Update Car</a>
+            </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="navigateTo('login')">LogIn</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="navigateTo('register')">Sign-up</button>
+    </form>
+  </div>
+</nav>
+
+  <div class="hero-section">
+    <div class="container">
+      <h1 class="typewriter">Welcome to  <span class="text"> Cars World !</span></h1>
+      <p>Get each And Every details you want to know</p>
+      <a href="#api1" class="btn btn-primary btn-lg mt-4">Explore </a>
+    </div>
+  </div>
+
+  
+  <!-- <div class="container api-section">
+    <div class="row"> -->
+
+     
+      <!-- <div class="col-lg-4 col-md-6 mb-4" id="api1">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="API 1 Image">
+          <div class="card-body">
+            <h5 class="card-title">Get All Car Details</h5>
+            <p class="card-text">Get detailed information about cars, including model, year, price, and more.</p>
+            <a class="btn btn-outline-primary" routerLink="/cars">Get All Cars</a>
+          </div>
+        </div>
+      </div> -->
+
+
+  <!-- Footer -->

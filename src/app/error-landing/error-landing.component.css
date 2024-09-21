@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+  }
+
+  .error-container {
+    text-align: center;
+  }
+
+  .error-container h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #dc3545;
+  }
+
+  .error-container h2 {
+    font-size: 2rem;
+    color: #6c757d;
+  }
+
+  .error-container p {
+    font-size: 1.25rem;
+    color: #343a40;
+  }
+
+  .error-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .btn-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-custom:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }

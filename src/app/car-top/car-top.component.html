@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Car Management</a> -->
+    <img src="https://th.bing.com/th/id/R.7f3c8507b9d5eea32869a0124674a63d?rik=ffNo1E8ILppazQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fcar_logo%2fcar_logo_PNG1667.png&ehk=bHVzvjpqTKRVFQHVicQgtIsdIsneSZTad4bCD5yDCNI%3d&risl=&pid=ImgRaw&r=0" alt="logo" width="50px" height="50px" margin-left="20px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cars">Get All Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cars/get">Get Car By Id</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cars/top">Top car</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cars/delete">Delete Car</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cars/update">Update Car</a>
+              </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LogIn</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LogOut</button>
+      </form>
+    </div>
+  </nav>
+  
+  <!-- Car Search Section -->
+  <div class="container car-details-section">
+    <h2 class="text-center mb-4">Top  <span class="text">Cars</span></h2>
+  
+   <!-- Car Search Section
+<div class="container car-details-section">
+  <h2 class="text-center mb-4">Top <span class="highlight">Cars</span></h2> -->
+
+  <!-- Search Form -->
+  <div class="search-section">
+    <form (ngSubmit)="setN()">
+      <div class="input-group mb-3">
+        <input type="number" class="form-control search-input" placeholder="Enter The Number" [(ngModel)]="N" name="N" required>
+        <button class="btn search-btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Car Details Section -->
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let car of cars">
+      <div class="card h-100 car-card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ car.modelName }} ({{ car.year }})</h5>
+          <p class="card-text">
+            <strong>Price:</strong> ${{ car.price }}<br>
+            <strong>Engine Type:</strong> {{ car.engineType }}<br>
+            <strong>Seller Type:</strong> {{ car.sellerType }}<br>
+            <strong>Owner:</strong> {{ car.owner }}
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <a [routerLink]="['/cars', car.id]" class="btn btn-outline-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* General Styling */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #34495e;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .highlight {
+    color: #3498db;
+  }
+
+  /* Search Section */
+  .search-section {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .input-group {
+    justify-content: center;
+  }
+
+  .search-input {
+    max-width: 300px;
+    padding: 0.8rem;
+    border-radius: 25px 0 0 25px;
+    border: 2px solid chocolate;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-btn {
+    background-color:chocolate;
+    color: white;
+    border-radius: 0 25px 25px 0;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .search-btn:hover {
+    background-color: chocolate;
+    transform: scale(1.05);
+  }
+
+  /* Car Cards */
+  .car-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .card-text {
+    color: #555;
+    font-size: 1.1rem;
+  }
+
+  .card-footer {
+    background-color: white;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .btn-outline-primary {
+    color:chocolate;
+    border: 2px solid chocolate;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-primary:hover {
+    background-color:chocolate;
+    color: white;
+    border-color:chocolate;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+  
+</body>
+</html>
+ 
+  

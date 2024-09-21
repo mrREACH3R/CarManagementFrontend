@@ -1,0 +1,27 @@
+<!-- 
+<input type="text" name="email" [(ngModel)]="loginModel.email" required>
+<input type="text" name="password" [(ngModel)]="loginModel.password" required>
+<button (click)="onLogin()">Submit</button> -->
+<!-- Login Page -->
+<div class="login-container">
+    <div class="login-card">
+      <h2 class="text-center mb-4">Login</h2>
+      
+      <form (ngSubmit)="onLogin()">
+        <!-- Email Field -->
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" name="email" [(ngModel)]="loginModel.email" required class="form-control" placeholder="Enter your email">
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-group mb-4">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" [(ngModel)]="loginModel.password" required class="form-control" placeholder="Enter your password">
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-custom w-100">Submit</button>
+      </form>
+    </div>
+  </div>

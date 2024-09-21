@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">Car Management</a> -->
+  <img src="https://th.bing.com/th/id/R.7f3c8507b9d5eea32869a0124674a63d?rik=ffNo1E8ILppazQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fcar_logo%2fcar_logo_PNG1667.png&ehk=bHVzvjpqTKRVFQHVicQgtIsdIsneSZTad4bCD5yDCNI%3d&risl=&pid=ImgRaw&r=0" alt="logo" width="50px" height="50px" margin-left="20px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cars">Get All Cars</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cars/get">Get Car By Id</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cars/top">Top car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cars/delete">Delete Car</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/cars/update">Update Car</a>
+              </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LogIn</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LogOut</button>
+    </form>
+  </div>
+</nav>
+  <!-- Car Search Section -->
+  <div class="container car-details-section">
+    <h2 class="text-center mb-4">Find <span class="find">Car</span></h2>
+
+    <!-- Search Form -->
+    <form (ngSubmit)="getCarById()">
+      <div class="input-group mb-3">
+        <input type="number" class="form-control" placeholder="Enter Car ID" [(ngModel)]="carId" name="carId" required>
+        <button class="btn btn-primary" type="submit">Enter</button>
+      </div>
+    </form>
+
+    <!-- Car Details Section -->
+    <div *ngIf="car" class="row mt-5">
+      <div class="col-lg-6">
+        <div class="card-details shadow-sm p-4">
+          <h3>{{ car.modelName }} ({{ car.year }})</h3>
+          <p><strong>Price:</strong> ${{ car.price }}</p>
+          <p><strong>Distance Driven:</strong> {{ car.distance }} km</p>
+          <p><strong>Engine Type:</strong> {{ car.engineType }}</p>
+          <p><strong>Transmission:</strong> {{ car.transmission }}</p>
+          <p><strong>Seller Type:</strong> {{ car.sellerType }}</p>
+          <p><strong>Owner:</strong> {{ car.owner }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Car Found Message -->
+    <!-- <div *ngIf="!car " class="alert alert-danger mt-5">
+      Car with ID {{ carId }} not found.
+    </div> -->
+  </div>
+

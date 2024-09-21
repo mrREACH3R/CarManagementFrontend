@@ -1,0 +1,9 @@
+<p>Enter first name</p>
+<input type="text" name="firstName" [(ngModel)]="userModel.firstName" required>
+<p>Enter last name</p>
+<input type="text" name="lastName" [(ngModel)]="userModel.lastName" required>
+<p>Enter Email</p>
+<input type="text" name="email" [(ngModel)]="userModel.email" required>
+<p>password</p>
+<input type="text" name="password" [(ngModel)]="userModel.password" required>
+<button (click)="onSignUp()">Submit</button>
